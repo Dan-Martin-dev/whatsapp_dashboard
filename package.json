@@ -1,10 +1,10 @@
 {
-  "name": "nextshcdndashboardstarter",
+  "name": "whatsapp_dashboard",
   "version": "1.0.0",
   "private": true,
   "author": {
     "name": "Kiran",
-    "url": "https://github.com/Kiranism"
+    "url": "https://github.com/Dan-Martin-dev"
   },
   "scripts": {
     "dev": "next dev --turbo",

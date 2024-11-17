@@ -40,38 +40,29 @@
   }
 
   .dark {
-    --background: 253 43% 3%;
-    --foreground: 253 31% 98%;
-    --muted: 253 7% 13%;
-    --muted-foreground: 253 13% 63%;
-    --popover: 253 43% 3%;
-    --popover-foreground: 253 31% 98%;
-    --card: 253 43% 4%;
-    --card-foreground: 253 31% 99%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --primary: 253 91% 58%;
-    --primary-foreground: 253 91% 98%;
-    --secondary: 253 7% 9%;
-    --secondary-foreground: 253 7% 69%;
-    --accent: 253 13% 14%;
-    --accent-foreground: 253 13% 74%;
-    --destructive: 339.2 90.36% 51.18%;
-    --destructive-foreground: 0 0% 100%;
-    --ring: 253 91% 58%;
-    --chart-1: 253 91% 58%;
-    --chart-2: 253 13% 74%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 253 43% 4%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 253 91% 58%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 253 91% 58%%;
+    --background: 0 0% 0%; /* Pitch black */
+    --foreground: 0 0% 100%; /* White text */
+    --muted: 0 0% 10%; /* Dark muted gray for slight contrast if needed */
+    --muted-foreground: 0 0% 80%; /* Light muted gray text */
+    --popover: 0 0% 0%; /* Black for popovers */
+    --popover-foreground: 0 0% 100%; /* White for popover text */
+    --card: 0 0% 0%; /* Black for cards */
+    --card-foreground: 0 0% 100%; /* White for card text */
+    --border: 0 0% 100%; /* Dark gray borders */
+    --input: 0 0% 15%; /* Slightly lighter black for inputs */
+    --primary: 0 0% 100%; /* White for primary icons and accents */
+    --primary-foreground: 0 0% 0%; /* Black foreground for contrast */
+    --secondary: 0 0% 30%; /* Dark gray for secondary accents */
+    --secondary-foreground: 0 0% 80%; /* Light gray for secondary text */
+    --accent: 0 0% 20%; /* Dark gray for subtle accents */
+    --accent-foreground: 0 0% 100%; /* White for accent text/icons */
+    --destructive: 0 100% 50%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White for destructive text */
+    --ring: 0 0% 100%; /* White outline for focused elements */
+    --sidebar-background: 0 0% 0%; /* Black for sidebar */
+    --sidebar-foreground: 0 0% 100%; /* White for sidebar text/icons */
+    --sidebar-accent-foreground: 0 0% 10%;
+    --company-name-color: 0 0% 100%; /* Slightly off-white for company name */
   }
 }
 
