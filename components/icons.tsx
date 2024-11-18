@@ -32,10 +32,12 @@ import {
   UserX2Icon,
   X
 } from 'lucide-react';
+import { FaGoogle } from 'react-icons/fa';
 
 export type Icon = LucideIcon;
 
 export const Icons = {
+  google: FaGoogle,
   dashboard: LayoutDashboardIcon,
   logo: Command,
   login: LogIn,

@@ -17,6 +17,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import * as z from 'zod';
 import GithubSignInButton from './github-auth-button';
+import GoogleLoginLink from './google-auth-button';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Enter a valid email address' })
@@ -47,7 +48,7 @@ export default function UserAuthForm() {
   };
 
   return (
-    <>
+    <div>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -77,7 +78,9 @@ export default function UserAuthForm() {
           </Button>
         </form>
       </Form>
-      <div className="relative">
+
+      {/* continue with */}
+      <div className="relative mt-4">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
         </div>
@@ -87,7 +90,12 @@ export default function UserAuthForm() {
           </span>
         </div>
       </div>
-      <GithubSignInButton />
-    </>
+
+      <div className="mt-4">
+        <GoogleLoginLink />
+        <div className="m-2"></div>
+        <GithubSignInButton />
+      </div>
+    </div>
   );
 }
