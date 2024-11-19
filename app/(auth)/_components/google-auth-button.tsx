@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/icons';
 import { useSearchParams } from 'next/navigation';
@@ -17,7 +16,7 @@ function GoogleLoginLink() {
         className="w-full"
         variant="outline"
         onClick={() =>
-          signIn('github', { callbackUrl: callbackUrl ?? '/dashboard' })
+          signIn('google', { callbackUrl: callbackUrl ?? '/dashboard' })
         }
       >
         <Icons.google className="mr-2 h-4 w-4" />
