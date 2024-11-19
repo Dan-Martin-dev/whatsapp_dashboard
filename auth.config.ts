@@ -4,7 +4,27 @@ import GithubProvider from 'next-auth/providers/github';
 import FacebookProvider from 'next-auth/providers/facebook';
 import GoogleProvider from 'next-auth/providers/google';
 
+declare module 'next-auth' {
+  interface Session {
+    user: {
+      id: string;
+      name: string;
+      email: string;
+      image: string;
+      accessToken?: string; // Add optional accessToken
+    };
+  }
+
+  interface JWT {
+    id: string;
+    accessToken?: string;
+    refreshToken?: string;
+  }
+}
+
 const authConfig = {
+  secret: process.env.JWT_SECRET!, // Move the secret here
+
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID ?? '',
@@ -45,8 +65,34 @@ const authConfig = {
       }
     })
   ],
+
+  session: {
+    strategy: 'jwt'
+  },
+
+  callbacks: {
+    async jwt({ token, user, account }) {
+      if (account && user) {
+        token.id = user.id;
+        token.accessToken = account.access_token;
+        token.refreshToken = account.refresh_token;
+      }
+      return token;
+    },
+
+    async session({ session, token }) {
+      // Add token fields to session
+      session.user = {
+        ...session.user,
+        id: token.id as string,
+        accessToken: token.accessToken as string
+      };
+      return session;
+    }
+  },
+
   pages: {
-    signIn: '/' //sigin page
+    signIn: '/'
   }
 } satisfies NextAuthConfig;
 
