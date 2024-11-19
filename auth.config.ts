@@ -23,7 +23,7 @@ declare module 'next-auth' {
 }
 
 const authConfig = {
-  secret: process.env.JWT_SECRET!, // Move the secret here
+  secret: process.env.JWT_SECRET, // Move the secret here
 
   providers: [
     GithubProvider({
