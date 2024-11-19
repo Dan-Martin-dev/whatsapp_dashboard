@@ -1,9 +1,11 @@
+'use client';
+
 import * as React from 'react';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/icons';
 import { useSearchParams } from 'next/navigation';
-import { signIn } from '@/auth';
+import { signIn } from 'next-auth/react';
 
 function GoogleLoginLink() {
   const searchParams = useSearchParams();
