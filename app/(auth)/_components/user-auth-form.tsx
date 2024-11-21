@@ -29,9 +29,11 @@ export default function UserAuthForm() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl');
   const [loading, startTransition] = useTransition();
+
   const defaultValues = {
     email: ''
   };
+
   const form = useForm<UserFormValue>({
     resolver: zodResolver(formSchema),
     defaultValues
@@ -60,6 +62,7 @@ export default function UserAuthForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email</FormLabel>
+
                 <FormControl>
                   <Input
                     type="email"
@@ -68,13 +71,14 @@ export default function UserAuthForm() {
                     {...field}
                   />
                 </FormControl>
+
                 <FormMessage />
               </FormItem>
             )}
           />
 
           <Button disabled={loading} className="ml-auto w-full" type="submit">
-            Continue With Email
+            Create account
           </Button>
         </form>
       </Form>
